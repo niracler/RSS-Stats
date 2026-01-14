@@ -11,8 +11,7 @@ function getConfig(env) {
     FEED_PATHS: env.FEED_PATHS,
     COOKIE_NAME: env.COOKIE_NAME || 'rss_stats_auth',
     COOKIE_MAX_AGE: parseInt(env.COOKIE_MAX_AGE) || 31536000,
-    PER_PAGE: parseInt(env.PER_PAGE) || 20,
-    DEFAULT_PASS: env.DEFAULT_PASS || 'admin888'
+    PER_PAGE: parseInt(env.PER_PAGE) || 20
   };
 
   // 必须配置项校验
@@ -345,7 +344,6 @@ async function logVisit(env, meta) {
 
 async function handleStats(request, env, ctx, config) {
   const url = new URL(request.url);
-  const password = env.AUTH_PASS || config.DEFAULT_PASS;
 
   // --- 处理退出登录 ---
   if (url.searchParams.has('logout')) {

@@ -32,14 +32,14 @@
    - 点击 "Add binding" -> "D1 database"。
    - 变量名必须设为 `DB`，数据库选择你刚才创建的 D1 数据库。
 4. **配置环境变量**:
-   - 在 Worker 的 "Settings" -> "Variables" 中添加以下环境变量：
+   - 在 Worker 的 "Settings" -> "Variables" 中找到 **Environment Variables** 部分（注意：不是 Secrets，Secrets 只能输入一个框且不可见，环境变量有“名称”和“值”两个输入框）。
+   - 点击 "Add variable"，分别添加以下项：
      - `RSS_URL`: **(必须)** 原始 RSS 地址。
      - `STATS_PATH`: **(必须)** 统计页路径 (建议 `/stats/`)。
      - `FEED_PATHS`: **(必须)** 订阅入口路径 (建议 `/feed/`)。
      - `COOKIE_NAME`: (可选) 登录 Cookie 名称 (默认 `rss_stats_auth`)。
      - `COOKIE_MAX_AGE`: (可选) 登录有效期秒数 (默认 1年)。
      - `PER_PAGE`: (可选) 列表每页显示条数 (默认 20)。
-     - `DEFAULT_PASS`: (可选) 初始默认密码 (默认 `admin888`)。
 5. **部署**: 点击 "Save and deploy"。
 
 ### 3. 初始化与使用
