@@ -161,8 +161,9 @@ export default {
         return await handleStats(request, env, ctx, config);
       }
 
-      // 精确匹配 feed 路径，避免 / 误触
-      if (path === config.FEED_PATHS || path.startsWith('/feed/')) {
+      // Match configured feed path, /feed/*, or /rss.xml
+      const feedPaths = config.FEED_PATHS.split(',').map(p => p.trim());
+      if (feedPaths.includes(path) || path.startsWith('/feed/')) {
         if (request.headers.get('X-RSS-Source')) {
           return await fetch(config.RSS_URL);
         }

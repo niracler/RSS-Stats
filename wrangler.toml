@@ -4,12 +4,13 @@ compatibility_date = "2024-09-23"
 
 routes = [
   { pattern = "niracler.com/feed/*", zone_name = "niracler.com" },
+  { pattern = "niracler.com/rss.xml", zone_name = "niracler.com" },
   { pattern = "niracler.com/stats/*", zone_name = "niracler.com" }
 ]
 
 [vars]
-RSS_URL = "https://niracler.com/rss.xml"
-FEED_PATHS = "/feed/"
+RSS_URL = "https://bokushi.cloud-1e0.workers.dev/rss.xml"
+FEED_PATHS = "/feed/,/rss.xml"
 STATS_PATH = "/stats/"
 
 [[d1_databases]]
