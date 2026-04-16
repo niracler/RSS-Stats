@@ -1,0 +1,18 @@
+name = "rss-stats"
+main = "index.js"
+compatibility_date = "2024-09-23"
+
+routes = [
+  { pattern = "niracler.com/feed/*", zone_name = "niracler.com" },
+  { pattern = "niracler.com/stats/*", zone_name = "niracler.com" }
+]
+
+[vars]
+RSS_URL = "https://niracler.com/rss.xml"
+FEED_PATHS = "/feed/"
+STATS_PATH = "/stats/"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "rss-stats-db"
+database_id = "a7d8d4cc-234a-4cbf-bba3-07d87484e156"
